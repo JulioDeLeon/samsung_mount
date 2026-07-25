@@ -461,6 +461,20 @@ solid PythonSCAD_Model
       vertex 2.190301168721783 0.5 21.543291419087275
     endloop
   endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -10 0 3.2
+      vertex -10 0 48.313704496788006
+      vertex -10 3.5 65.9
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -10 0 3.2
+      vertex -10 3.5 65.9
+      vertex -10 3.5 3.2
+    endloop
+  endfacet
   facet normal 0.707106781186548 0 0.707106781186547
     outer loop
       vertex 2.190301168721783 0.5 21.543291419087275
@@ -480,13 +494,6 @@ solid PythonSCAD_Model
       vertex 3.543291419087275 3 20.19030116872178
       vertex 3.750398200273823 3.5 20.19030116872178
       vertex 2.190301168721783 3 21.543291419087275
-    endloop
-  endfacet
-  facet normal -1 0 0
-    outer loop
-      vertex -10 0 3.2
-      vertex -10 3.5 95
-      vertex -10 3.5 3.2
     endloop
   endfacet
   facet normal 1 0 0
@@ -650,6 +657,27 @@ solid PythonSCAD_Model
       vertex 2.397407949908331 0 58.456708580912725
     endloop
   endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -10 0 48.313704496788006
+      vertex -8.676988597749753 0 65.9
+      vertex -10 0 65.9
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -10 0 48.313704496788006
+      vertex -4.8 0 65.9
+      vertex -8.676988597749753 0 65.9
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -10 0 48.313704496788006
+      vertex 2.397407949908331 0 58.456708580912725
+      vertex -4.8 0 65.9
+    endloop
+  endfacet
   facet normal 0.6785983445458474 0.2810846377148209 -0.6785983445458466
     outer loop
       vertex 2.397407949908331 0 58.456708580912725
@@ -701,51 +729,44 @@ solid PythonSCAD_Model
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex -10 0 48.313704496788006
-      vertex 2.397407949908331 0 58.456708580912725
-      vertex -7.053121364870105 0 87.48545948041877
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
       vertex 2.397407949908331 0 58.456708580912725
       vertex 3.750398200273823 0 59.80969883127822
-      vertex -7.053121364870105 0 87.48545948041877
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex -10 0 48.313704496788006
-      vertex -7.053121364870105 0 87.48545948041877
-      vertex -10 0 95
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 3.750398200273823 0 59.80969883127822
-      vertex 2.1999999999999993 0 76.8
-      vertex -2.2 0 76.8
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 3.750398200273823 0 59.80969883127822
-      vertex -2.2 0 76.8
-      vertex -7.053121364870105 0 87.48545948041877
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 3.750398200273823 0 59.80969883127822
-      vertex 2.1999999999999993 0 81.2
-      vertex 2.1999999999999993 0 76.8
+      vertex -4.8 0 65.9
     endloop
   endfacet
   facet normal 0 -1 0
     outer loop
       vertex 3.750398200273823 0 59.80969883127822
       vertex 18.24960179972618 0 59.80969883127822
-      vertex 2.1999999999999993 0 81.2
+      vertex -4.8 0 65.9
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -4.8 0 65.9
+      vertex -2.2 0 76.8
+      vertex -4.8 0 95
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -4.8 0 65.9
+      vertex 2.1999999999999993 0 76.8
+      vertex -2.2 0 76.8
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -4.8 0 65.9
+      vertex 18.24960179972618 0 59.80969883127822
+      vertex 26 0 95
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex -4.8 0 65.9
+      vertex 26 0 95
+      vertex 2.1999999999999993 0 76.8
     endloop
   endfacet
   facet normal 0 -1 0
@@ -753,20 +774,6 @@ solid PythonSCAD_Model
       vertex 19.602592050091673 0 58.456708580912725
       vertex 26 0 95
       vertex 18.24960179972618 0 59.80969883127822
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 18.24960179972618 0 59.80969883127822
-      vertex 26 0 95
-      vertex 2.1999999999999993 0 81.2
-    endloop
-  endfacet
-  facet normal -1 0 0
-    outer loop
-      vertex -10 0 3.2
-      vertex -10 0 48.313704496788006
-      vertex -10 3.5 95
     endloop
   endfacet
   facet normal 0.9238795325112865 0.3826834323650904 0
@@ -781,6 +788,13 @@ solid PythonSCAD_Model
       vertex 2.190301168721783 0.5 21.543291419087275
       vertex 2.190301168721783 3 58.456708580912725
       vertex 2.190301168721783 0.5 58.456708580912725
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -10 0 48.313704496788006
+      vertex -10 0 65.9
+      vertex -10 3.5 65.9
     endloop
   endfacet
   facet normal 0.6785983445458474 0.2810846377148209 -0.6785983445458466
@@ -888,11 +902,39 @@ solid PythonSCAD_Model
       vertex 18.24960179972618 3.5 59.80969883127822
     endloop
   endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -10 0 65.9
+      vertex -8.676988597749753 0 65.9
+      vertex -10 3.5 65.9
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -8.676988597749753 0 65.9
+      vertex -4.8 0 65.9
+      vertex -6.8 3.5 65.9
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -8.676988597749753 0 65.9
+      vertex -6.8 3.5 65.9
+      vertex -10 3.5 65.9
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -4.8 0 65.9
+      vertex -4.8 3.5 65.9
+      vertex -6.8 3.5 65.9
+    endloop
+  endfacet
   facet normal -1 0 0
     outer loop
-      vertex -10 0 48.313704496788006
-      vertex -10 0 95
-      vertex -10 3.5 95
+      vertex -4.8 0 65.9
+      vertex -4.8 3.5 95
+      vertex -4.8 3.5 65.9
     endloop
   endfacet
   facet normal 1 0 0
@@ -997,63 +1039,49 @@ solid PythonSCAD_Model
     outer loop
       vertex -2.2 0 76.8
       vertex -2.2 0 81.2
-      vertex -7.053121364870105 0 87.48545948041877
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex -2.2 0 81.2
-      vertex 26 0 95
-      vertex -7.053121364870105 0 87.48545948041877
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex -7.053121364870105 0 87.48545948041877
-      vertex -6.8 0 95
-      vertex -10 0 95
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex -7.053121364870105 0 87.48545948041877
-      vertex 26 0 95
-      vertex -6.8 0 95
+      vertex -4.8 0 95
     endloop
   endfacet
   facet normal 0 -1 0
     outer loop
       vertex -2.2 0 81.2
       vertex 2.1999999999999993 0 81.2
+      vertex -4.8 0 95
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 2.1999999999999993 0 76.8
       vertex 26 0 95
+      vertex 2.1999999999999993 0 81.2
     endloop
   endfacet
-  facet normal 0 0 1
+  facet normal 0 -1 0
     outer loop
-      vertex -10 0 95
-      vertex -6.8 0 95
-      vertex -10 3.5 95
-    endloop
-  endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex -6.8 0 95
+      vertex 2.1999999999999993 0 81.2
       vertex 26 0 95
-      vertex -10 3.5 95
+      vertex -4.8 0 95
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex -4.8 0 65.9
+      vertex -4.8 0 95
+      vertex -4.8 3.5 95
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 26 0 95
-      vertex -6.8 3.5 95
-      vertex -10 3.5 95
+      vertex -4.8 0 95
+      vertex 26 3.5 95
+      vertex -4.8 3.5 95
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
+      vertex -4.8 0 95
       vertex 26 0 95
       vertex 26 3.5 95
-      vertex -6.8 3.5 95
     endloop
   endfacet
   facet normal -1 0 0
@@ -1179,14 +1207,14 @@ solid PythonSCAD_Model
     outer loop
       vertex -6.8 3.5 3.2
       vertex -6.8 11.7 3.2
-      vertex -6.8 3.5 95
+      vertex -6.8 3.5 65.9
     endloop
   endfacet
   facet normal 1 0 0
     outer loop
       vertex -6.8 11.7 3.2
       vertex -6.8 11.7 9
-      vertex -6.8 3.5 95
+      vertex -6.8 3.5 65.9
     endloop
   endfacet
   facet normal 1 0 0
@@ -1238,17 +1266,24 @@ solid PythonSCAD_Model
       vertex 26 11.7 3.2
     endloop
   endfacet
-  facet normal 0.9238795325112865 -0.3826834323650904 0
+  facet normal 0 1 0
     outer loop
-      vertex 2.190301168721783 3 58.456708580912725
-      vertex 2.397407949908331 3.5 21.543291419087275
-      vertex 2.397407949908331 3.5 58.456708580912725
+      vertex -6.8 3.5 3.2
+      vertex -6.8 3.5 65.9
+      vertex -4.8 3.5 65.9
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
       vertex -6.8 3.5 3.2
-      vertex -6.8 3.5 95
+      vertex -4.8 3.5 65.9
+      vertex 2.397407949908331 3.5 58.456708580912725
+    endloop
+  endfacet
+  facet normal 0.9238795325112865 -0.3826834323650904 0
+    outer loop
+      vertex 2.190301168721783 3 58.456708580912725
+      vertex 2.397407949908331 3.5 21.543291419087275
       vertex 2.397407949908331 3.5 58.456708580912725
     endloop
   endfacet
@@ -1276,7 +1311,14 @@ solid PythonSCAD_Model
   facet normal 0 1 0
     outer loop
       vertex 2.397407949908331 3.5 58.456708580912725
-      vertex -6.8 3.5 95
+      vertex -4.8 3.5 65.9
+      vertex -4.8 3.5 95
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 2.397407949908331 3.5 58.456708580912725
+      vertex -4.8 3.5 95
       vertex 3.750398200273823 3.5 59.80969883127822
     endloop
   endfacet
@@ -1297,8 +1339,15 @@ solid PythonSCAD_Model
   facet normal -1 0 0
     outer loop
       vertex -10 3.5 3.2
-      vertex -10 3.5 95
-      vertex -10 14.899999999999999 95
+      vertex -10 3.5 65.9
+      vertex -10 14.899999999999999 65.9
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -10 3.5 65.9
+      vertex -6.8 3.5 65.9
+      vertex -10 14.899999999999999 65.9
     endloop
   endfacet
   facet normal 0 1 0
@@ -1347,13 +1396,13 @@ solid PythonSCAD_Model
     outer loop
       vertex -6.8 11.7 9
       vertex -6.8 14.899999999999999 9
-      vertex -6.8 3.5 95
+      vertex -6.8 3.5 65.9
     endloop
   endfacet
   facet normal -1 0 0
     outer loop
       vertex -10 3.5 3.2
-      vertex -10 14.899999999999999 95
+      vertex -10 14.899999999999999 65.9
       vertex -10 14.899999999999999 3.2
     endloop
   endfacet
@@ -1444,7 +1493,7 @@ solid PythonSCAD_Model
   facet normal 0 1 0
     outer loop
       vertex -10 14.899999999999999 3.2
-      vertex -10 14.899999999999999 95
+      vertex -10 14.899999999999999 65.9
       vertex -6.8 14.899999999999999 9
     endloop
   endfacet
@@ -1507,36 +1556,29 @@ solid PythonSCAD_Model
   facet normal 1 0 0
     outer loop
       vertex -6.8 14.899999999999999 9
-      vertex -6.8 14.899999999999999 95
-      vertex -6.8 3.5 95
+      vertex -6.8 14.899999999999999 65.9
+      vertex -6.8 3.5 65.9
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex -6.8 3.5 65.9
+      vertex -6.8 14.899999999999999 65.9
+      vertex -10 14.899999999999999 65.9
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
       vertex -6.8 14.899999999999999 9
-      vertex -10 14.899999999999999 95
-      vertex -6.8 14.899999999999999 95
+      vertex -10 14.899999999999999 65.9
+      vertex -6.8 14.899999999999999 65.9
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
       vertex 3.750398200273823 3.5 59.80969883127822
-      vertex -6.8 3.5 95
+      vertex -4.8 3.5 95
       vertex 26 3.5 95
-    endloop
-  endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex -10 3.5 95
-      vertex -6.8 3.5 95
-      vertex -6.8 14.899999999999999 95
-    endloop
-  endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex -10 3.5 95
-      vertex -6.8 14.899999999999999 95
-      vertex -10 14.899999999999999 95
     endloop
   endfacet
   facet normal 0 -1 0
@@ -1912,6 +1954,20 @@ solid PythonSCAD_Model
   endfacet
   facet normal 0 -1 0
     outer loop
+      vertex 250 0 3.2
+      vertex 241.73241161390703 0 37.26758838609296
+      vertex 237.6025920500917 0 21.543291419087275
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 250 0 3.2
+      vertex 242.45 0 39
+      vertex 241.73241161390703 0 37.26758838609296
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
       vertex 237.6025920500917 0 21.543291419087275
       vertex 240 0 36.55
       vertex 238.26758838609297 0 37.26758838609296
@@ -1929,13 +1985,6 @@ solid PythonSCAD_Model
       vertex 237.6025920500917 0 21.543291419087275
       vertex 241.73241161390703 0 37.26758838609296
       vertex 240 0 36.55
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 237.6025920500917 0 21.543291419087275
-      vertex 242.45 0 39
-      vertex 241.73241161390703 0 37.26758838609296
     endloop
   endfacet
   facet normal 0 1 0
@@ -1950,13 +1999,6 @@ solid PythonSCAD_Model
       vertex 237.6025920500917 0 21.543291419087275
       vertex 237.6025920500917 0 38.87303155939568
       vertex 237.8096988312782 0.5 58.456708580912725
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 250 0 3.2
-      vertex 250 0 65.9
-      vertex 237.6025920500917 0 21.543291419087275
     endloop
   endfacet
   facet normal 0 0 -1
@@ -2078,18 +2120,18 @@ solid PythonSCAD_Model
       vertex 236.45670858091273 3 20.19030116872178
     endloop
   endfacet
-  facet normal 1 0 0
-    outer loop
-      vertex 250 0 3.2
-      vertex 250 3.3821052631578947 3.2
-      vertex 250 0 65.9
-    endloop
-  endfacet
   facet normal -0.9238795325113015 0.3826834323650539 0
     outer loop
       vertex 237.6025920500917 0 21.543291419087275
       vertex 237.8096988312782 0.5 58.456708580912725
       vertex 237.8096988312782 0.5 21.543291419087275
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 250 0 3.2
+      vertex 250 3.3821052631578947 3.2
+      vertex 250 0 95
     endloop
   endfacet
   facet normal -0.7071067811865512 0 0.7071067811865438
@@ -2104,13 +2146,6 @@ solid PythonSCAD_Model
       vertex 236.45670858091273 3 20.19030116872178
       vertex 237.8096988312782 3 21.543291419087275
       vertex 237.6025920500917 3.5 21.543291419087275
-    endloop
-  endfacet
-  facet normal 1 0 0
-    outer loop
-      vertex 250 0 65.9
-      vertex 250 3.3821052631578947 3.2
-      vertex 250 3.5 3.2
     endloop
   endfacet
   facet normal -1 0 0
@@ -2192,23 +2227,9 @@ solid PythonSCAD_Model
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex 237.6025920500917 0 21.543291419087275
-      vertex 250 0 65.9
+      vertex 250 0 3.2
+      vertex 250 0 95
       vertex 242.45 0 39
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 241.73241161390703 0 40.73241161390704
-      vertex 242.45 0 39
-      vertex 250 0 65.9
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 241.73241161390703 0 40.73241161390704
-      vertex 250 0 65.9
-      vertex 240 0 41.45
     endloop
   endfacet
   facet normal -0.9238795325113015 0.382683432365054 0
@@ -2227,16 +2248,16 @@ solid PythonSCAD_Model
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex 240 0 41.45
-      vertex 244.8 0 65.9
-      vertex 237.6025920500917 0 58.456708580912725
+      vertex 241.73241161390703 0 40.73241161390704
+      vertex 242.45 0 39
+      vertex 250 0 95
     endloop
   endfacet
   facet normal 0 -1 0
     outer loop
+      vertex 241.73241161390703 0 40.73241161390704
+      vertex 250 0 95
       vertex 240 0 41.45
-      vertex 250 0 65.9
-      vertex 244.8 0 65.9
     endloop
   endfacet
   facet normal 0 -1 0
@@ -2283,16 +2304,9 @@ solid PythonSCAD_Model
   endfacet
   facet normal 0 -1 0
     outer loop
+      vertex 240 0 41.45
+      vertex 250 0 95
       vertex 237.6025920500917 0 58.456708580912725
-      vertex 242.2 0 76.8
-      vertex 236.24960179972618 0 59.80969883127822
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 237.6025920500917 0 58.456708580912725
-      vertex 244.8 0 65.9
-      vertex 242.2 0 76.8
     endloop
   endfacet
   facet normal 0 -1 0
@@ -2304,8 +2318,15 @@ solid PythonSCAD_Model
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex 244.8 0 65.9
-      vertex 244.8 0 95
+      vertex 237.6025920500917 0 58.456708580912725
+      vertex 250 0 95
+      vertex 236.24960179972618 0 59.80969883127822
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 236.24960179972618 0 59.80969883127822
+      vertex 250 0 95
       vertex 242.2 0 76.8
     endloop
   endfacet
@@ -2407,13 +2428,6 @@ solid PythonSCAD_Model
       vertex 237.6025920500917 3.5 58.456708580912725
     endloop
   endfacet
-  facet normal 1 0 0
-    outer loop
-      vertex 250 0 65.9
-      vertex 250 3.5 3.2
-      vertex 250 3.5 65.9
-    endloop
-  endfacet
   facet normal -0.7071067811865512 0 -0.7071067811865438
     outer loop
       vertex 237.8096988312782 0.5 58.456708580912725
@@ -2428,32 +2442,11 @@ solid PythonSCAD_Model
       vertex 236.24960179972618 3.5 59.80969883127822
     endloop
   endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex 244.8 0 65.9
-      vertex 250 0 65.9
-      vertex 244.8 3.5 65.9
-    endloop
-  endfacet
   facet normal 1 0 0
     outer loop
-      vertex 244.8 0 65.9
-      vertex 244.8 3.5 65.9
-      vertex 244.8 0 95
-    endloop
-  endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex 250 0 65.9
-      vertex 246.8 3.5 65.9
-      vertex 244.8 3.5 65.9
-    endloop
-  endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex 250 0 65.9
-      vertex 250 3.5 65.9
-      vertex 246.8 3.5 65.9
+      vertex 250 0 95
+      vertex 250 3.3821052631578947 3.2
+      vertex 250 3.5 95
     endloop
   endfacet
   facet normal 0 -1 0
@@ -2547,13 +2540,6 @@ solid PythonSCAD_Model
       vertex 237.8 0 81.2
     endloop
   endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 214 0 95
-      vertex 237.8 0 81.2
-      vertex 244.8 0 95
-    endloop
-  endfacet
   facet normal 0 0 1
     outer loop
       vertex 237.8 -4.1 81.2
@@ -2563,37 +2549,44 @@ solid PythonSCAD_Model
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex 237.8 0 81.2
+      vertex 242.2 0 76.8
+      vertex 250 0 95
       vertex 242.2 0 81.2
-      vertex 244.8 0 95
     endloop
   endfacet
   facet normal 0 -1 0
     outer loop
-      vertex 242.2 0 76.8
-      vertex 244.8 0 95
+      vertex 237.8 0 81.2
       vertex 242.2 0 81.2
+      vertex 250 0 95
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 214 0 95
+      vertex 237.8 0 81.2
+      vertex 250 0 95
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
       vertex 214 0 95
-      vertex 244.8 3.5 95
+      vertex 250 0 95
       vertex 214 3.5 95
     endloop
   endfacet
   facet normal 0 0 1
     outer loop
-      vertex 214 0 95
-      vertex 244.8 0 95
-      vertex 244.8 3.5 95
+      vertex 250 0 95
+      vertex 246.8 3.5 95
+      vertex 214 3.5 95
     endloop
   endfacet
-  facet normal 1 0 0
+  facet normal 0 0 1
     outer loop
-      vertex 244.8 0 95
-      vertex 244.8 3.5 65.9
-      vertex 244.8 3.5 95
+      vertex 250 0 95
+      vertex 250 3.5 95
+      vertex 246.8 3.5 95
     endloop
   endfacet
   facet normal -1 0 0
@@ -2701,6 +2694,13 @@ solid PythonSCAD_Model
       vertex 237.6025920500917 3.5 21.543291419087275
     endloop
   endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 250 3.3821052631578947 3.2
+      vertex 250 3.5 3.2
+      vertex 250 3.5 95
+    endloop
+  endfacet
   facet normal 0 0 -1
     outer loop
       vertex 214 0 0
@@ -2767,7 +2767,7 @@ solid PythonSCAD_Model
   facet normal -1 0 0
     outer loop
       vertex 246.8 3.5 3.2
-      vertex 246.8 3.5 65.9
+      vertex 246.8 3.5 95
       vertex 246.8 11.7 9
     endloop
   endfacet
@@ -2775,7 +2775,7 @@ solid PythonSCAD_Model
     outer loop
       vertex 250 3.5 3.2
       vertex 250 11.7 9
-      vertex 250 3.5 65.9
+      vertex 250 3.5 95
     endloop
   endfacet
   facet normal 0 1 0
@@ -2806,25 +2806,18 @@ solid PythonSCAD_Model
       vertex 236.24960179972618 3.5 59.80969883127822
     endloop
   endfacet
-  facet normal 0 1 0
-    outer loop
-      vertex 246.8 3.5 3.2
-      vertex 237.6025920500917 3.5 58.456708580912725
-      vertex 244.8 3.5 65.9
-    endloop
-  endfacet
-  facet normal 0 1 0
-    outer loop
-      vertex 246.8 3.5 3.2
-      vertex 244.8 3.5 65.9
-      vertex 246.8 3.5 65.9
-    endloop
-  endfacet
   facet normal -0.6785983445458496 -0.28108463771479053 -0.6785983445458568
     outer loop
       vertex 237.8096988312782 3 58.456708580912725
       vertex 236.24960179972618 3.5 59.80969883127822
       vertex 237.6025920500917 3.5 58.456708580912725
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 246.8 3.5 3.2
+      vertex 237.6025920500917 3.5 58.456708580912725
+      vertex 246.8 3.5 95
     endloop
   endfacet
   facet normal 0 1 0
@@ -2837,14 +2830,7 @@ solid PythonSCAD_Model
   facet normal 0 1 0
     outer loop
       vertex 221.75039820027382 3.5 59.80969883127822
-      vertex 214 3.5 95
-      vertex 244.8 3.5 65.9
-    endloop
-  endfacet
-  facet normal 0 1 0
-    outer loop
-      vertex 221.75039820027382 3.5 59.80969883127822
-      vertex 244.8 3.5 65.9
+      vertex 246.8 3.5 95
       vertex 236.24960179972618 3.5 59.80969883127822
     endloop
   endfacet
@@ -2852,14 +2838,7 @@ solid PythonSCAD_Model
     outer loop
       vertex 237.6025920500917 3.5 58.456708580912725
       vertex 236.24960179972618 3.5 59.80969883127822
-      vertex 244.8 3.5 65.9
-    endloop
-  endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex 246.8 3.5 65.9
-      vertex 250 3.5 65.9
-      vertex 246.8 14.899999999999999 65.9
+      vertex 246.8 3.5 95
     endloop
   endfacet
   facet normal -1 0 0
@@ -2929,14 +2908,21 @@ solid PythonSCAD_Model
     outer loop
       vertex 250 11.7 9
       vertex 250 13.488421052631578 9
-      vertex 250 3.5 65.9
+      vertex 250 3.5 95
+    endloop
+  endfacet
+  facet normal -1 0 0
+    outer loop
+      vertex 246.8 11.7 9
+      vertex 246.8 3.5 95
+      vertex 246.8 14.899999999999999 9
     endloop
   endfacet
   facet normal 1 0 0
     outer loop
       vertex 250 13.488421052631578 9
       vertex 250 14.899999999999999 8.482142857142858
-      vertex 250 3.5 65.9
+      vertex 250 3.5 95
     endloop
   endfacet
   facet normal 0 0 1
@@ -3114,67 +3100,67 @@ solid PythonSCAD_Model
       vertex 249.69847843283236 14.899999999999999 8.951421525289657
     endloop
   endfacet
-  facet normal -1 0 0
-    outer loop
-      vertex 246.8 11.7 9
-      vertex 246.8 14.899999999999999 65.9
-      vertex 246.8 14.899999999999999 9
-    endloop
-  endfacet
-  facet normal 0 1 0
-    outer loop
-      vertex 246.8 14.899999999999999 9
-      vertex 250 14.899999999999999 65.9
-      vertex 249.69684210526316 14.899999999999999 9
-    endloop
-  endfacet
   facet normal 0 1 0
     outer loop
       vertex 250 14.899999999999999 8.482142857142858
       vertex 249.69847843283236 14.899999999999999 8.951421525289657
-      vertex 250 14.899999999999999 65.9
+      vertex 250 14.899999999999999 95
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 246.8 14.899999999999999 9
+      vertex 246.8 14.899999999999999 95
+      vertex 249.69684210526316 14.899999999999999 9
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
       vertex 249.69847843283236 14.899999999999999 8.951421525289657
       vertex 249.69684210526316 14.899999999999999 9
-      vertex 250 14.899999999999999 65.9
+      vertex 250 14.899999999999999 95
     endloop
   endfacet
   facet normal -1 0 0
     outer loop
-      vertex 246.8 11.7 9
-      vertex 246.8 3.5 65.9
-      vertex 246.8 14.899999999999999 65.9
+      vertex 246.8 14.899999999999999 9
+      vertex 246.8 3.5 95
+      vertex 246.8 14.899999999999999 95
     endloop
   endfacet
   facet normal 1 0 0
     outer loop
       vertex 250 14.899999999999999 8.482142857142858
-      vertex 250 14.899999999999999 65.9
-      vertex 250 3.5 65.9
-    endloop
-  endfacet
-  facet normal 0 0 1
-    outer loop
-      vertex 250 3.5 65.9
-      vertex 250 14.899999999999999 65.9
-      vertex 246.8 14.899999999999999 65.9
+      vertex 250 14.899999999999999 95
+      vertex 250 3.5 95
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
-      vertex 246.8 14.899999999999999 9
-      vertex 246.8 14.899999999999999 65.9
-      vertex 250 14.899999999999999 65.9
+      vertex 249.69684210526316 14.899999999999999 9
+      vertex 246.8 14.899999999999999 95
+      vertex 250 14.899999999999999 95
     endloop
   endfacet
   facet normal 0 1 0
     outer loop
-      vertex 244.8 3.5 65.9
+      vertex 221.75039820027382 3.5 59.80969883127822
       vertex 214 3.5 95
-      vertex 244.8 3.5 95
+      vertex 246.8 3.5 95
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 246.8 3.5 95
+      vertex 250 3.5 95
+      vertex 250 14.899999999999999 95
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 246.8 3.5 95
+      vertex 250 14.899999999999999 95
+      vertex 246.8 14.899999999999999 95
     endloop
   endfacet
   facet normal -0.28108463771482023 -0.6785983445458472 -0.6785983445458469

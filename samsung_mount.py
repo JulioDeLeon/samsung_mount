@@ -1,13 +1,13 @@
 """
 Samsung Galaxy Tab A7 (10.4") IKEA Skådis Pegboard Mount
 Designed for PythonSCAD (https://www.pythonscad.org)
-Target Printer: Prusa MK4S (Build Volume: 250 x 210 x 220 mm)
+Target Printer: Prusa MK4S (Build Build Volume: 250 x 210 x 220 mm)
 
 Key Features:
 - Orientation: Landscape Mode (perfect for Grafana Dashboards)
 - Tablet State: Bare Tablet (247.6 x 157.4 x 7.0 mm)
 - Modular 2-Piece Split Brackets (Left & Right)
-- Accurately Positioned USB-C Charging Port Cutout at Z=81.9mm (centered on tablet's short edge)
+- USB-C Port Cutout on Left Bracket (prevents camera bump interference)
 - Integrated IKEA Skådis T-Hooks spaced at 240 mm (6 Skådis grid columns)
 """
 
@@ -24,6 +24,10 @@ if 'RENDER_MODE' not in globals():
 # ==============================================================================
 # PARAMETERS & DIMENSIONS (All values in millimeters)
 # ==============================================================================
+
+# USB-C Port Side Location ("left" or "right")
+# Default set to "left" so tablet orientation avoids camera bump interference
+USB_PORT_SIDE = "left"
 
 # --- Samsung Galaxy Tab A7 Bare Dimensions ---
 TABLET_WIDTH = 247.6
@@ -87,7 +91,7 @@ def skadis_lower_bumper():
         .rotate([90, 0, 0])
     return pin
 
-def bracket_body(is_right_side=False):
+def bracket_body(side="left"):
     """
     Creates the main U-channel holder body:
     - Backplate
@@ -95,8 +99,10 @@ def bracket_body(is_right_side=False):
     - Front retaining lip
     - Outer lateral end wall
     - Weight reduction / ventilation cutout
-    - Accurately centered USB-C port cutout (right side)
+    - Accurately centered USB-C port cutout (if side == USB_PORT_SIDE)
     """
+    is_left = (side == "left")
+    is_usb_side = (side == USB_PORT_SIDE)
     total_depth = BACKPLATE_THICKNESS + SLOT_DEPTH + WALL_THICKNESS
     
     # Backplate
@@ -110,26 +116,27 @@ def bracket_body(is_right_side=False):
         .translate([0, total_depth - WALL_THICKNESS, 0])
     
     # Outer Lateral Wall (Left wall for left bracket, right wall for right bracket)
-    side_wall_x = 0 if not is_right_side else BRACKET_WIDTH - WALL_THICKNESS
+    side_wall_x = 0 if is_left else BRACKET_WIDTH - WALL_THICKNESS
     side_wall = cube([WALL_THICKNESS, total_depth, BRACKET_HEIGHT]) \
         .translate([side_wall_x, 0, 0])
     
     base = union(backplate, shelf, front_lip, side_wall)
     
-    # Backplate ventilation cutout (avoid cutting into side wall)
+    # Backplate ventilation cutout
     vent_w = 18.0
     vent_h = 40.0
-    vent_x = 12.0 if not is_right_side else 6.0
+    vent_x = 12.0 if is_left else 6.0
     vent_cutout = rounded_cube([vent_w, BACKPLATE_THICKNESS + 4, vent_h], r=2.5) \
         .translate([vent_x, -2, 20])
     base = difference(base, vent_cutout)
         
-    # Accurately Centered USB-C Cable Pass-Through Port on Right Bracket
-    if is_right_side:
+    # Accurately Centered USB-C Cable Pass-Through Port
+    if is_usb_side:
         cable_port_h = 32.0  # 32mm clearance for USB-C cable head & strain relief
         cable_port_z = USB_PORT_CENTER_Z - (cable_port_h / 2.0)  # Starts at Z = 65.9 mm
+        cable_port_x = -2.0 if is_left else (BRACKET_WIDTH - WALL_THICKNESS - 2.0)
         cable_port = cube([WALL_THICKNESS + 4, total_depth + 4, cable_port_h + 10.0]) \
-            .translate([BRACKET_WIDTH - WALL_THICKNESS - 2, -2, cable_port_z])
+            .translate([cable_port_x, -2, cable_port_z])
         base = difference(base, cable_port)
         
     return base
@@ -140,7 +147,7 @@ def bracket_body(is_right_side=False):
 
 def create_left_bracket():
     """Generates the Complete Left Skådis Bracket."""
-    body = bracket_body(is_right_side=False)
+    body = bracket_body(side="left")
     
     # Attach upper Skådis hook
     hook = skadis_top_hook() \
@@ -154,7 +161,7 @@ def create_left_bracket():
 
 def create_right_bracket():
     """Generates the Complete Right Skådis Bracket."""
-    body = bracket_body(is_right_side=True)
+    body = bracket_body(side="right")
     
     # Attach upper Skådis hook
     hook = skadis_top_hook() \
