@@ -7,7 +7,7 @@ Key Features:
 - Orientation: Landscape Mode (perfect for Grafana Dashboards)
 - Tablet State: Bare Tablet (247.6 x 157.4 x 7.0 mm)
 - Modular 2-Piece Split Brackets (Left & Right)
-- Open USB-C Port Cutout on Right Bracket for continuous 24/7 charging
+- Accurately Positioned USB-C Charging Port Cutout at Z=81.9mm (centered on tablet's short edge)
 - Integrated IKEA Skådis T-Hooks spaced at 240 mm (6 Skådis grid columns)
 """
 
@@ -34,7 +34,7 @@ SLOT_DEPTH = TABLET_THICKNESS + THICKNESS_TOLERANCE  # 8.2 mm total slot channel
 
 # --- Mount Bracket Geometry ---
 BRACKET_WIDTH = 36.0         # Width of each holder bracket (X axis)
-BRACKET_HEIGHT = 90.0        # Vertical height of bracket body
+BRACKET_HEIGHT = 95.0        # Vertical height of bracket body
 WALL_THICKNESS = 3.2         # Heavy-duty wall thickness
 FRONT_LIP_HEIGHT = 9.0       # Grips bezel securely without obscuring display (~9.3mm bezel)
 BACKPLATE_THICKNESS = 3.5    # Back wall thickness between tablet and pegboard
@@ -58,6 +58,9 @@ BUMPER_LENGTH = 7.0          # Stabilizer pin length into lower slot
 # Hook offset from bracket origin
 LEFT_HOOK_X_OFFSET = 10.0    # Hook center relative to left bracket left edge
 RIGHT_HOOK_X_OFFSET = 26.0   # Hook center relative to right bracket left edge
+
+# USB-C Port Center in Landscape Mode (centered along 157.4mm height)
+USB_PORT_CENTER_Z = WALL_THICKNESS + (TABLET_HEIGHT / 2.0)  # 81.9 mm from bracket base
 
 # ==============================================================================
 # HELPER GEOMETRY MODULES
@@ -90,7 +93,7 @@ def bracket_body(is_right_side=False):
     - Front retaining lip
     - Outer lateral end wall
     - Weight reduction / ventilation cutout
-    - USB-C port cutout (right side)
+    - Accurately centered USB-C port cutout (right side)
     """
     total_depth = BACKPLATE_THICKNESS + SLOT_DEPTH + WALL_THICKNESS
     
@@ -113,18 +116,18 @@ def bracket_body(is_right_side=False):
     
     # Backplate ventilation cutout (avoid cutting into side wall)
     vent_w = 18.0
-    vent_h = BRACKET_HEIGHT - 36
-    if vent_h > 10:
-        vent_x = 12.0 if not is_right_side else 6.0
-        vent_cutout = rounded_cube([vent_w, BACKPLATE_THICKNESS + 4, vent_h], r=2.5) \
-            .translate([vent_x, -2, 24])
-        base = difference(base, vent_cutout)
+    vent_h = 40.0
+    vent_x = 12.0 if not is_right_side else 6.0
+    vent_cutout = rounded_cube([vent_w, BACKPLATE_THICKNESS + 4, vent_h], r=2.5) \
+        .translate([vent_x, -2, 20])
+    base = difference(base, vent_cutout)
         
-    # USB-C Cable Pass-Through Port on Right Bracket
+    # Accurately Centered USB-C Cable Pass-Through Port on Right Bracket
     if is_right_side:
-        cable_port_h = 28.0
-        cable_port = cube([WALL_THICKNESS + 4, total_depth + 4, cable_port_h]) \
-            .translate([BRACKET_WIDTH - WALL_THICKNESS - 2, -2, 14])
+        cable_port_h = 32.0  # 32mm clearance for USB-C cable head & strain relief
+        cable_port_z = USB_PORT_CENTER_Z - (cable_port_h / 2.0)  # Starts at Z = 65.9 mm
+        cable_port = cube([WALL_THICKNESS + 4, total_depth + 4, cable_port_h + 10.0]) \
+            .translate([BRACKET_WIDTH - WALL_THICKNESS - 2, -2, cable_port_z])
         base = difference(base, cable_port)
         
     return base
@@ -179,11 +182,6 @@ LEFT_BRACKET_X = -LEFT_HOOK_X_OFFSET  # -10.0 mm
 
 # Right Bracket origin placed so its hook is at X = 240.0 mm
 RIGHT_BRACKET_X = SKADIS_HOOK_SPAN_MM - RIGHT_HOOK_X_OFFSET  # 214.0 mm
-
-# Inner clearance between left and right outer walls:
-# Left inner wall face at X = -10.0 + 3.2 = -6.8 mm
-# Right inner wall face at X = 214.0 + 36.0 - 3.2 = 246.8 mm
-# Total channel width = 246.8 - (-6.8) = 253.6 mm (spacious fit for 247.6 mm tablet)
 
 # Tablet X position (centered within channel with 3.0 mm lateral padding on each side)
 TABLET_POS_X = -6.8 + 3.0  # -3.8 mm
