@@ -1,12 +1,14 @@
 """
 Samsung Galaxy Tab A7 (10.4") IKEA Skådis Pegboard Mount
 Designed for PythonSCAD (https://www.pythonscad.org)
-Target Printer: Prusa MK4S (Build Build Volume: 250 x 210 x 220 mm)
+Target Printer: Prusa MK4S (Build Volume: 250 x 210 x 220 mm)
 
 Key Features:
 - Orientation: Landscape Mode (perfect for Grafana Dashboards)
 - Tablet State: Bare Tablet (247.6 x 157.4 x 7.0 mm)
 - Modular 2-Piece Split Brackets (Left & Right)
+- Top & Bottom Front Retaining Lips (Prevents tablet from tilting forward or falling out)
+- Top Entry Lead-in Chamfer for easy drop-in insertion
 - USB-C Port Cutout on Left Bracket (prevents camera bump interference)
 - Integrated IKEA Skådis T-Hooks spaced at 240 mm (6 Skådis grid columns)
 """
@@ -42,7 +44,8 @@ SLOT_DEPTH = TABLET_THICKNESS + THICKNESS_TOLERANCE  # 8.2 mm total slot channel
 BRACKET_WIDTH = 36.0         # Width of each holder bracket (X axis)
 BRACKET_HEIGHT = 95.0        # Vertical height of bracket body
 WALL_THICKNESS = 3.2         # Heavy-duty wall thickness
-FRONT_LIP_HEIGHT = 9.0       # Grips bezel securely without obscuring display (~9.3mm bezel)
+FRONT_LIP_HEIGHT = 12.0      # Bottom retaining lip height (~9.3mm bezel)
+TOP_CATCH_HEIGHT = 23.0      # Upper front retaining catch height (prevents forward tipping)
 BACKPLATE_THICKNESS = 3.5    # Back wall thickness between tablet and pegboard
 
 # --- IKEA Skådis Pegboard Standard Dimensions ---
@@ -96,10 +99,12 @@ def bracket_body(side="left"):
     Creates the main U-channel holder body:
     - Backplate
     - Bottom resting shelf
-    - Front retaining lip
+    - Bottom front retaining lip
+    - Upper front retaining catch (prevents tablet from tilting forward)
     - Outer lateral end wall
     - Weight reduction / ventilation cutout
     - Accurately centered USB-C port cutout (if side == USB_PORT_SIDE)
+    - Top lead-in chamfer for smooth slide-in insertion
     """
     is_left = (side == "left")
     is_usb_side = (side == USB_PORT_SIDE)
@@ -111,20 +116,25 @@ def bracket_body(side="left"):
     # Bottom Shelf
     shelf = cube([BRACKET_WIDTH, total_depth, WALL_THICKNESS])
     
-    # Front Retaining Lip
-    front_lip = cube([BRACKET_WIDTH, WALL_THICKNESS, FRONT_LIP_HEIGHT]) \
+    # Bottom Front Retaining Lip (Z = 0 to 12.0 mm)
+    bottom_lip = cube([BRACKET_WIDTH, WALL_THICKNESS, FRONT_LIP_HEIGHT]) \
         .translate([0, total_depth - WALL_THICKNESS, 0])
+    
+    # Upper Front Retaining Catch (Z = 72.0 to 95.0 mm) - Prevents forward tipping!
+    top_catch_z = BRACKET_HEIGHT - TOP_CATCH_HEIGHT
+    top_catch = cube([BRACKET_WIDTH, WALL_THICKNESS, TOP_CATCH_HEIGHT]) \
+        .translate([0, total_depth - WALL_THICKNESS, top_catch_z])
     
     # Outer Lateral Wall (Left wall for left bracket, right wall for right bracket)
     side_wall_x = 0 if is_left else BRACKET_WIDTH - WALL_THICKNESS
     side_wall = cube([WALL_THICKNESS, total_depth, BRACKET_HEIGHT]) \
         .translate([side_wall_x, 0, 0])
     
-    base = union(backplate, shelf, front_lip, side_wall)
+    base = union(backplate, shelf, bottom_lip, top_catch, side_wall)
     
     # Backplate ventilation cutout
     vent_w = 18.0
-    vent_h = 40.0
+    vent_h = 35.0
     vent_x = 12.0 if is_left else 6.0
     vent_cutout = rounded_cube([vent_w, BACKPLATE_THICKNESS + 4, vent_h], r=2.5) \
         .translate([vent_x, -2, 20])
@@ -139,6 +149,12 @@ def bracket_body(side="left"):
             .translate([cable_port_x, -2, cable_port_z])
         base = difference(base, cable_port)
         
+    # Top Entry Lead-in Chamfer for easy drop-in insertion
+    chamfer = cylinder(h=BRACKET_WIDTH + 4, r=2.0, center=False) \
+        .rotate([0, 90, 0]) \
+        .translate([-2, total_depth - WALL_THICKNESS / 2, BRACKET_HEIGHT])
+    base = difference(base, chamfer)
+    
     return base
 
 # ==============================================================================
