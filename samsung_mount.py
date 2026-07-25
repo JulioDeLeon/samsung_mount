@@ -15,9 +15,11 @@ from pythonscad import *
 
 # ==============================================================================
 # RENDER MODE SELECTION
-# Options: "assembly" (Full preview with ghost tablet), "left", "right"
+# Default: "assembly" (Full preview with ghost tablet).
+# Can be overridden via CLI: -D RENDER_MODE='"left"' or -D RENDER_MODE='"right"'
 # ==============================================================================
-RENDER_MODE = "assembly"
+if 'RENDER_MODE' not in globals():
+    RENDER_MODE = "assembly"
 
 # ==============================================================================
 # PARAMETERS & DIMENSIONS (All values in millimeters)
@@ -186,9 +188,9 @@ RIGHT_BRACKET_X = SKADIS_HOOK_SPAN_MM - RIGHT_HOOK_X_OFFSET  # 214.0 mm
 # Tablet X position (centered within channel with 3.0 mm lateral padding on each side)
 TABLET_POS_X = -6.8 + 3.0  # -3.8 mm
 
-if RENDER_MODE == "left":
+if str(RENDER_MODE).lower() == "left":
     create_left_bracket().show()
-elif RENDER_MODE == "right":
+elif str(RENDER_MODE).lower() == "right":
     create_right_bracket().show()
 else:
     left_b = create_left_bracket().translate([LEFT_BRACKET_X, 0, 0])
